@@ -18,7 +18,7 @@
 var defaultUrn = 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bW9kZWwyMDE2LTExLTI3LTEwLTMxLTM1LXVkeWJmYXZxbjBnZWVxczJudWZ3NjN4cmd5eGUvSG91c2UuZHdmeA';
 
 $(document).ready(function () {
-  var tokenurl = 'https://' + window.location.host + '/api/token';
+  var tokenurl = 'http://' + window.location.host + '/api/token';
   var config = {
     environment: 'AutodeskProduction'
     //environment : 'AutodeskStaging'

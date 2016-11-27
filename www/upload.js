@@ -3,7 +3,7 @@ var oViewDataClient = null;
 $(document).ready(function () {
   oViewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(
       'https://developer.api.autodesk.com',
-      'https://' + window.location.host + '/api/token'
+      'http://' + window.location.host + '/api/token'
   );
 
   $('#btnTranslateThisOne').click(function (evt) {
