@@ -27,13 +27,13 @@ var router = express.Router();
 // Generates access token
 ///////////////////////////////////////////////////////////////////////////////
 router.get('/token', function (req, res) {
-    request.post(
-        credentials.Authentication,
-        { form: credentials.credentials },
-        function (error, response, body) {
-            if (!error && response.statusCode == 200)
-                res.send(body);
-        });
+  request.post(
+      credentials.Authentication,
+      { form: credentials.credentials },
+      function (error, response, body) {
+        if (!error && response.statusCode == 200)
+          res.send(body);
+      });
 });
 
 module.exports = router;

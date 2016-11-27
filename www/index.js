@@ -18,39 +18,39 @@
 var defaultUrn = 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bW9kZWwyMDE2LTExLTI3LTEwLTMxLTM1LXVkeWJmYXZxbjBnZWVxczJudWZ3NjN4cmd5eGUvSG91c2UuZHdmeA';
 
 $(document).ready(function () {
-    var tokenurl = 'http://' + window.location.host + '/api/token';
-    var config = {
-        environment : 'AutodeskProduction'
-		//environment : 'AutodeskStaging'
-    };
+  var tokenurl = 'https://' + window.location.host + '/api/token';
+  var config = {
+    environment: 'AutodeskProduction'
+    //environment : 'AutodeskStaging'
+  };
 
-    // Instantiate viewer factory
-    var viewerFactory = new Autodesk.ADN.Toolkit.Viewer.AdnViewerFactory(
-        tokenurl,
-        config);
+  // Instantiate viewer factory
+  var viewerFactory = new Autodesk.ADN.Toolkit.Viewer.AdnViewerFactory(
+      tokenurl,
+      config);
 
-    // Allows different urn to be passed as url parameter
-    var paramUrn = Autodesk.Viewing.Private.getParameterByName('urn');
-    var urn = (paramUrn !== '' ? paramUrn : defaultUrn);
+  // Allows different urn to be passed as url parameter
+  var paramUrn = Autodesk.Viewing.Private.getParameterByName('urn');
+  var urn = (paramUrn !== '' ? paramUrn : defaultUrn);
 
-    viewerFactory.getViewablePath (urn,
-        function(pathInfoCollection) {
-            var viewerConfig = {
-                viewerType: 'GuiViewer3D'
-            };
+  viewerFactory.getViewablePath(urn,
+      function (pathInfoCollection) {
+        var viewerConfig = {
+          viewerType: 'GuiViewer3D'
+        };
 
-            var viewer = viewerFactory.createViewer(
-                $('#viewerDiv')[0],
-                viewerConfig);
+        var viewer = viewerFactory.createViewer(
+            $('#viewerDiv')[0],
+            viewerConfig);
 
-            viewer.load(pathInfoCollection.path3d[0].path);
-        },
-        onError);
+        viewer.load(pathInfoCollection.path3d[0].path);
+      },
+      onError);
 
 });
 
 function onError(error) {
-    console.log('Error: ' + error);
+  console.log('Error: ' + error);
 };
 
 // The following code does not rely on Autodesk.ADN.Toolkit.Viewer.AdnViewerManager
@@ -71,7 +71,7 @@ function onError(error) {
 //
 //              if (urn.indexOf('urn:') !== 0)
 //                  urn = 'urn:' + urn;
-                  
+
 //            function initializeViewer(containerId, documentId, role) {
 //                var viewerContainer = document.getElementById(containerId);
 //                var viewer = new Autodesk.Viewing.Private.GuiViewer3D(
