@@ -46,7 +46,6 @@ $(document).ready(function () {
             viewer.load(pathInfoCollection.path3d[0].path);
         },
         onError);
-
 });
 
 function onError(error) {
